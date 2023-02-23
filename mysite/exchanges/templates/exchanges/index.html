@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/exchanges/exchanges.css"
+    <title>Exchanges Index</title>
+</head>
+<body>
+  <h1>Exchange Rates</h1>
+
+  <ul>
+      {% for money_type in rates_key %}
+          <li><a href="/exchanges/{{ money_type }}">{{ money_type }}</a>
+              {% if money_type == 'euro'%}
+              €
+              {% elif money_type == 'bitcoin'%}
+              ₿
+              {% elif money_type == 'ethereum'%}
+              Ξ
+              {% elif money_type == 'peso'%}
+              ₱
+              {% elif money_type == 'yen'%}
+              ¥
+              {% elif money_type == 'pound'%}
+              £
+              {% elif money_type == 'yuan'%}
+              元
+              {% elif money_type == 'rupee'%}
+              ₹
+              {% elif money_type == 'ruble'%}
+              ₽
+              {% elif money_type == 'krone'%}
+              kr
+              {% endif %}
+          </li>
+      {% endfor %}
+  </ul>
+</body>
+</html>
