@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django and mySQL</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<div>
+<h1>Applied CS 6/7 Music Database</h1>
+<table>
+      <tr>
+        <th>Artist ID</th>
+        <th>Artist Name</th>
+        <th>Artist Formed</th>
+      </tr>
+      {% for artist in artists %}  
+        <tr>
+          <td>{{ artist.0 }}</td>
+          <td>{{ artist.1 }}</td>       
+          <td>{{ artist.2 }}</td>  
+        </tr>       
+      {% endfor %} 
+</table>  
+</div>
+</body>
+</html>
