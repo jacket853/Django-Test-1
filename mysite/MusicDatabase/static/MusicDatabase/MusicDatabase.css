@@ -1,0 +1,19 @@
+body {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    background-image: url("https://th.bing.com/th/id/R.28f87dfd2a7012551524a4e3c0dc4d6e?rik=jmsYxIpaMOjU9w&pid=ImgRaw&r=0");
+}
+
+h1, h4 {
+    text-align: center;
+    color: blueviolet;
+}
+
+img {
+    /* width: auto; */
+    height: 1%;
+}
+
+td {
+    color: white;
+}
+

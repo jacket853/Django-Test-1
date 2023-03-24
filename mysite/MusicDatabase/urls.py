@@ -5,4 +5,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index),
+    path("<int:aID>", views.ArtistsAlbums),
+    path("<str:sort>", views.indexWithSort),
+    # path("albums.html?<str:sort>", views.AlbumInfo)
 ]
