@@ -20,5 +20,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("challenges/", include("challenges.urls")),
     path("exchanges/", include("exchanges.urls")),
-    path("MusicDatabase/", include("MusicDatabase.urls"))
+    path("MusicDatabase/", include("MusicDatabase.urls")),
+    path("chatbot/", include("chatbot.urls"))
 ]
