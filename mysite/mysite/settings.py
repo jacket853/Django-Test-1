@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'music',
+        'NAME':'6822_bishops',
         'USER':'AdvAppDevStudnt',
         'PASSWORD':'6dn-Ltt@x97UGPZb',
         'HOST':'mysql5.websitelive.net',

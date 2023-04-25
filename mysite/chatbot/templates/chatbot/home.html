@@ -1,6 +1,26 @@
 {% extends 'chatbot/base.html' %}
 
 {% block content %}
+    <script>
+        function setPlaceholder() {
+            var chatbot = document.getElementById("answerType");
+            var userInput = document.getElementById("question");
+            var size = document.getElementById("size");
+            var label= document.getElementById("sizeLabel");
+            // console.log(chatbot.value);
+            if (chatbot.value == "davinci") {
+                userInput.placeholder = "What would you like to ask?";
+                size.setAttribute("hidden", "True");
+                label.setAttribute("hidden", "True");
+            } else {
+                console.log(chatbot.value);
+                userInput.placeholder = "What would you like me to draw?";
+                size.setAttribute("hidden", "False");
+                label.setAttribute("hidden", "False");
+            }
+        }
+    </script>
+
 
     <br/>
     <h1>Hello from your friendly(?) new AI overlord... ChatGPT</h1>
@@ -22,11 +42,19 @@
     </div>
 
 
-    <form method="post" action="{% url 'home' %}">
+    <form method="post" action="{% url 'home' %}"> <!-- Could use 'onload="setPlaceholder()"' to set defaults -->
         {% csrf_token %}
+        <p>Answer Type: <select name="answerType" id="answerType" onchange="setPlaceholder()">
+            <option value="davinci">DaVinci-003 [chatbot]</option>
+            <option value="dalle">Dall-E [images]</option>
+        </select></p>
+        <p hidden="False" name="sizeLabel" id="sizeLabel">Image Size: <select hidden="False" name="size" id="size">
+            <option type="hidden" value="256x256">256x256</option>
+            <option type="hidden" value="512x512">512x512</option>
+            <option type="hidden" value="1024x1024">1024x1024</option>
+        </select></p>
         <div class="mb-3">
-            <input type="text" class="form-control" name="question" id="question"
-            placeholder="Ask me anything... that Ms. Shea would approve of...">
+            <input type="davinci" class="form-control" name="question" id="question">
         </div>
         <button type="submit" class="btn btn-dark">Submit Question</button>
 
